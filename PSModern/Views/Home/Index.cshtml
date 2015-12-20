@@ -1,0 +1,72 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div ng-app="app"  ng-controller="PSController">
+
+    <div class="row">
+        <div class="col-md-4">
+            <input type="text" ng-model="models.helloAngular" />
+            <h1>{{models.helloAngular}}</h1>
+            <h1>{{models.WorkName}}</h1>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <p ng-repeat="work in models.Works">{{work.Name}}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th colspan="11">Субподрядные работы</th>
+                    </tr>
+                    <tr>
+                        <th rowspan="2">Наименование работ</th>
+                        <th rowspan="2">Исполнитель</th>
+                        <th rowspan="2">Стоимость для заказчика, руб.</th>
+                        <th rowspan="2">Вид ресурса</th>
+                        <th rowspan="2">Стоимость для АйТи, руб.</th>
+                        <th rowspan="2">Налог, руб.</th>
+                        <th colspan="2">Маржа</th>
+                        <th rowspan="2">Наименование БН</th>
+                        <th rowspan="2">Тип работ</th>
+                        <th rowspan="2">Примечание </th>
+                        
+                    </tr>
+                    <tr>
+                        <th>руб.</th>
+                        <th>%</th>
+                    </tr>
+                </thead>
+                <tr ng-repeat="work in models.Works">
+                    <td>{{work.Name}}</td>
+                    <td>{{work.Executioner}}</td>
+                    <td>{{work.InternalPrice}}</td>
+                    <td>{{work.ExternalPrice}}</td>
+                    <td>{{work.Tax}}</td>
+                    <td>{{work.PMP}}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <select ng-model="models.bn"  class="dropdown form-control" required>
+                            <option value="" selected>-- Выберите БН --</option>
+                            <option ng-repeat="item in models.BNs" value="{{item.ID}}">{{item.Name}}</option>
+                        </select>
+
+                        
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+
+        </div>
+
+    </div>
+</div>
