@@ -47,20 +47,17 @@
                     <td>{{work.Name}}</td>
                     <td>{{work.Executioner}}</td>
                     <td>{{work.InternalPrice}}</td>
+                    <td>
+                        <select ng-model="work.RType" class="dropdown form-control" ng-options="rt.Name for rt in models.ResTypes track by rt.ID"></select>
+                    </td>
                     <td>{{work.ExternalPrice}}</td>
                     <td>{{work.Tax}}</td>
-                    <td>{{work.PMP}}</td>
-                    <td></td>
                     <td></td>
                     <td></td>
                     <td>
-                        <select ng-model="models.bn"  class="dropdown form-control" required>
-                            <option value="" selected>-- Выберите БН --</option>
-                            <option ng-repeat="item in models.BNs" value="{{item.ID}}">{{item.Name}}</option>
-                        </select>
-
-                        
+                        <select ng-model="work.BNUnit" class="dropdown form-control" ng-options="bn.Name for bn in models.BNs track by bn.ID"></select>
                     </td>
+                    <td></td>
                     <td></td>
                     <td></td>
                 </tr>

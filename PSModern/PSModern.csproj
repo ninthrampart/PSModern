@@ -168,9 +168,13 @@
     <Compile Include="Models\DAL\PSContext.cs" />
     <Compile Include="Models\PS.cs" />
     <Compile Include="Models\Repository\EFBNRepository.cs" />
+    <Compile Include="Models\Repository\EFResTypeRepository.cs" />
     <Compile Include="Models\Repository\EFWorkRepository.cs" />
+    <Compile Include="Models\Repository\EFWorkTypeRepository.cs" />
     <Compile Include="Models\Repository\IBNRepository.cs" />
+    <Compile Include="Models\Repository\IResTypeRepository.cs" />
     <Compile Include="Models\Repository\IWorkRepository.cs" />
+    <Compile Include="Models\Repository\IWorkTypeRepository.cs" />
     <Compile Include="Models\ResType.cs" />
     <Compile Include="Models\Work.cs" />
     <Compile Include="Models\WorkType.cs" />

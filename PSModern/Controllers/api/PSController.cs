@@ -31,5 +31,15 @@ namespace PSModern.Controllers.api
             return a;
         }
 
+
+        [Route("GetAllResTypes")]
+        public Collection<ResType> GetAllResTypes()
+        {
+            IResTypeRepository rep = new EFResTypeRepository();
+            var a = rep.GetAll();
+
+            return a;
+        }
+
     }
 }

@@ -7,6 +7,7 @@
 
     GetAllWorks();
     GetAllBNs();
+    GetAllResTypes();
     //debugger;
 
     function GetAllWorks()
@@ -14,10 +15,10 @@
         //debugger;
         var getData = PSService.GetAllWorks();
         getData.then(function (works) {
-            //debugger;
+            debugger;
             $scope.models.WorkName = works.data[0].Name;
-            $scope.models.Works = works.data;            
-            //debugger;
+            $scope.models.Works = works.data;
+            debugger;
         }, function (a, b, c) {
             debugger;
         });
@@ -29,10 +30,24 @@
         getData2.then(function (bns) {
             //debugger;
             $scope.models.BNs = bns.data;
-            $scope.models.bn = null;
-            debugger;
+            //$scope.models.bn = null;
+            //debugger;
         }, function (a, b, c) {
             debugger;
         });
+    }
+
+    function GetAllResTypes()
+    {
+        debugger;
+        var getData3 = PSService.GetAllResTypes();
+        getData3.then(function (rTypes) {
+            debugger;
+            $scope.models.ResTypes = rTypes.data;
+            debugger;
+        },
+            function (a, b, c) {
+                debugger;
+            });
     }
 }
